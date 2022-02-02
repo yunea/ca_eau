@@ -1,4 +1,4 @@
-#Parametres a l'envers
+#Suite de fibonacci
 #Epreuve de l'eau, Exercice 4 : eau03.py
 
 import sys
