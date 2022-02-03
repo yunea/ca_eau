@@ -3,40 +3,51 @@
 
 import sys
 
+#recupere les premières lettres correspondant au nombre de lettre dans la regex
+
 
 def split_txt(txt, nb):
     txt = str(txt)
-    nb = int(nb)
+    l = len(nb)
     i = 0
     new_txt = ""
-    while i < nb:
+    while i < l and len(txt) >= l:
         new_txt = new_txt+str(txt[i])
+        i = i+1
     return new_txt
 
 
-def del_element(txt):
+def del_element(txt, regex):
     texte = ""
     i = 0
-    while i < len(txt):
-        if i == 0:
-            continue
-        else:
-            texte = texte+txt[i]
-    print('Texte : '+str(texte))
+    l = len(txt)
+    if l < len(regex):
+        return 'not found'
+    else:
+        while i < l:
+            if i == 0:
+                i = i+1
+            else:
+                texte = texte+txt[i]
+                i = i+1
     return texte
 
 
 def is_in_str(txt, regex):
     txt = str(txt)
-    reg = str(regex)
     part_txt = split_txt(txt, regex)
     result = ""
-    if reg == part_txt:
+    if str(regex) == str(part_txt):
         result = True
     else:
-        del txt[0]
-        result = False
-
+        while del_element(txt, regex) != 'not found':
+            txt = del_element(txt, regex)
+            part_txt = split_txt(txt, regex)
+            if regex == part_txt:
+                result = True
+                break
+            else:
+                result = False
     return result
 
 
