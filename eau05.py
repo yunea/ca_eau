@@ -3,6 +3,7 @@
 
 import sys
 
+#fonctions
 #recupere les premières lettres correspondant au nombre de lettre dans la regex
 
 
@@ -15,6 +16,8 @@ def split_txt(txt, nb):
         new_txt = new_txt+str(txt[i])
         i = i+1
     return new_txt
+
+#supprime le premier caractere
 
 
 def del_element(txt, regex):
@@ -31,6 +34,8 @@ def del_element(txt, regex):
                 texte = texte+txt[i]
                 i = i+1
     return texte
+
+#regex dans la chaine de caractere
 
 
 def is_in_str(txt, regex):
@@ -50,6 +55,8 @@ def is_in_str(txt, regex):
                 result = False
     return result
 
+#recuperation arguments
+
 
 def args(sys_args):
     if len(sys_args) == 3:
@@ -58,6 +65,7 @@ def args(sys_args):
         return False
 
 
+#execution
 nb_arg = args(sys.argv)
 if nb_arg == True:
     txt = sys.argv[1]
@@ -65,4 +73,5 @@ if nb_arg == True:
     result = is_in_str(txt, regex)
     print(result)
 else:
+    print('Error : you need two arguments')
     print('Error : you need two arguments')
