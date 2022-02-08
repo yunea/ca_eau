@@ -1,11 +1,10 @@
 #Majuscule sur deux
-#Epreuve de l'eau, Exercice 6 : eau05.py
+#Epreuve de l'eau, Exercice 7 : eau06.py
 
 import sys
 
-#passage en majuscule
 
-
+#change min to maj
 def to_maj(letter):
     l_min = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
              "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -28,6 +27,8 @@ def to_maj(letter):
     else:
         new_letter = l_maj[count_index]
     return new_letter
+
+#passage en majuscule
 
 
 def maj(txt):
