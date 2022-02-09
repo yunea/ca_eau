@@ -11,14 +11,12 @@ def is_int(arg):
     resultat = True
     for n in arg:
         for i in tab_num:
-            print("i:"+str(i)+" n:"+str(n))
-            if n == i:
+            if str(n) == str(i):
                 res = True
-                i = 0
+                break
             else:
                 res = False
         tab_res.append(res)
-    print(tab_res)
     for r in tab_res:
         if r == False:
             resultat = False
@@ -30,5 +28,7 @@ def is_int(arg):
 
 arg = sys.argv[1]
 
-
-print(is_int(arg))
+if len(sys.argv) == 2:
+    print(is_int(arg))
+else:
+    print("Error : only one argument needed")
