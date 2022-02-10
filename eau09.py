@@ -37,22 +37,22 @@ def is_int(a, b):
         return False
 
 
-arg1 = sys.argv[1]
-arg2 = sys.argv[2]
 tab = []
 
-int_res = is_int(arg1, arg2)
-
-if int_res == True:
-    if len(sys.argv) == 3:
+if len(sys.argv) == 3:
+    arg1 = sys.argv[1]
+    arg2 = sys.argv[2]
+    int_res = is_int(arg1, arg2)
+    if int_res == True:
         min = is_min(arg1, arg2)
         max = is_max(arg1, arg2)
         tab.append(int(min))
         tab1 = min_to_max(min, max)
         for n in tab1:
             tab.append(n)
-        print(tab)
+        str_tab = " ".join(map(str, tab))
+        print(str_tab)
     else:
-        print("Error arguments")
+        print("Error integer needed")
 else:
-    print("Error integer needed")
+    print("Error arguments")
