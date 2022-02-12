@@ -5,34 +5,30 @@ import sys
 
 
 def tab_min(tab):
-    i = 1
     res = []
     for n in tab:
-        if i > len(tab)-1:
-            break
-        else:
-            b = int(n)-int(tab[i])
-            res.append(b)
-            i = i+1
+        for m in tab:
+            if n == m:
+                continue
+            else:
+                res.append(int(n)-int(m))
     return res
 
 
 def find_min(tab):
-    print(tab)
+    b = []
     for n in tab:
-        print(n)
         if n < 0:
-            print("nnn : "+str(n))
-            tab.remove(n)
-            n = n*(-1)
-            tab.append(n)
+            b.append(n*(-1))
+    for n in b:
+        for m in tab:
+            if n == (-m):
+                tab.append(n)
+        tab.remove(-n)
     a = tab[0]
     for n in tab:
-        print("n :"+str(n))
         if a > n:
-            print("a : "+str(a))
             a = n
-    #print(tab)
     return a
 
 
@@ -45,12 +41,15 @@ def is_int(tab):
         return False
 
 
-tab = sys.argv
-tab.pop(0)
-isInt = is_int(tab)
-if isInt == True:
-    tabMin = tab_min(tab)
-    findMin = find_min(tabMin)
-    print(findMin)
+if len(sys.argv) > 2:
+    tab = sys.argv
+    tab.pop(0)
+    isInt = is_int(tab)
+    if isInt == True:
+        tabMin = tab_min(tab)
+        findMin = find_min(tabMin)
+        print(findMin)
+    else:
+        print("Error")
 else:
     print("Error")
