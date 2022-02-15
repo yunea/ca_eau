@@ -5,31 +5,35 @@ import sys
 
 
 def my_bubble_sort(array):
-    print(array)
-    i = len(array)-1
-    print(i)
+    i = (len(array)-1)
     j = 0
-    new_array = []
+    x = 0
+    c = True
     while i > 1:
-        print('i= '+str(i))
-        while j < (i-1):
+        c = True
+        print("i="+str(i))
+        print("j="+str(j))
+        while j < i:
 
-            print('j= '+str(j))
-            if array[j+1] < array[j]:
-                a = array[j+1]
-                array[j+1] = array[j]
-                array[j] = a
-                new_array.append(a)
-            else:
-                new_array.append(array[j])
+            print(array)
+            if (array[j] > array[j+1]):
+
+                x = array[j]
+                array[j] = array[j+1]
+                array[j+1] = x
+                c = False
             j = j+1
         i = i-1
-    return (new_array)
+
+        print("c="+str(c))
+        if c == True:
+            return (array)
 
 
 if len(sys.argv) > 3:
     args = sys.argv
     args.pop(0)
+    print(args)
     tab = my_bubble_sort(args)
     print(tab)
 else:
