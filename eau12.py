@@ -20,11 +20,23 @@ def my_bubble_sort(array):
     return (array)
 
 
-if len(sys.argv) > 3:
+def is_int(args):
+    try:
+        for arg in args:
+            int(arg)
+        return True
+    except:
+        return False
+
+
+if len(sys.argv) > 2:
     args = sys.argv
     args.pop(0)
-    res = my_bubble_sort(args)
-    res_str = [str(a) for a in res]
-    print(' '.join(res_str))
+    if is_int(args) == True:
+        res = my_bubble_sort(args)
+        res_str = [str(a) for a in res]
+        print(' '.join(res_str))
+    else:
+        print("Error")
 else:
     print("Error")
