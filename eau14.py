@@ -28,6 +28,7 @@ def tri_ascii(array):
     x = 0
     k = 0
     j = 0
+    change = False
     #mise en ordre ascii
     while i >= 1:
         while j <= i-1:
@@ -37,18 +38,22 @@ def tri_ascii(array):
             car2 = chaine2.split(".")
             car1.remove('')
             car2.remove('')
-            k = 0
             while (k < len(car1) and k < len(car2)):
                 if int(car1[k]) > int(car2[k]):
                     x = tab_ascii[j]
                     tab_ascii[j] = tab_ascii[j+1]
                     tab_ascii[j+1] = x
+                    change = True
+                if int(car1[k]) < int(car2[k]):
+                    change = True
                 k = k+1
+                if change == True:
+                    break
             j = j+1
+            k = 0
+            change = False
         i = i-1
         j = 0
-    print("tab ascii :")
-    print(tab_ascii)
     #mise en ordre avec les arguments
     j = 0
     for car_ascii in tab_ascii:
@@ -57,15 +62,6 @@ def tri_ascii(array):
                 res.append(key)
                 j = j+1
     return (res)
-
-
-def comparer(a, b):
-    if int(a) > int(b):
-        return a
-    elif int(a) < int(b):
-        return b
-    else:
-        return "egaux"
 
 
 args = sys.argv
