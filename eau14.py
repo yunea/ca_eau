@@ -3,6 +3,8 @@
 
 import sys
 
+#passer arguments en ascii
+
 
 def to_ascii(tab_str):
     mot = ""
@@ -16,14 +18,19 @@ def to_ascii(tab_str):
         i = i+1
     return tab_ascii
 
+#tri les mots dans l'ordre ascii
+#array = tableau : mot_str => mot_ascii
+
 
 def tri_ascii(array):
     tab_ascii = {}
     res = []
     j = 0
+    #tab_ascii : indice => mot_ascii
     for key in array:
         tab_ascii[j] = array[key]
         j = j+1
+    #ordonner par ordre ascii (tri à bulle)
     i = (len(tab_ascii)-1)
     x = 0
     k = 0
@@ -54,13 +61,14 @@ def tri_ascii(array):
             change = False
         i = i-1
         j = 0
-    #mise en ordre avec les arguments
+    #mise en ordre avec les arguments (mot_str)
     j = 0
     for car_ascii in tab_ascii:
         for key in array:
             if str(tab_ascii[car_ascii]) == str(array[key]):
                 res.append(key)
                 j = j+1
+    #res : tableau = indice => mot_str dans l'ordre ascii
     return (res)
 
 
