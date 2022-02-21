@@ -3,6 +3,8 @@
 
 import sys
 
+#cherche regex dans tableau
+
 
 def in_tab(tab, car):
     res = False
@@ -10,6 +12,8 @@ def in_tab(tab, car):
         if str(i) == str(car):
             res = True
     return res
+
+#cherche l'index de la premiere apparition de la regex
 
 
 def find_index(tab, car):
@@ -21,11 +25,15 @@ def find_index(tab, car):
             i = i+1
     return i
 
+#recuperer dernier arg == regex
+
 
 def recup_arg(tab):
     l = len(tab)
     arg = tab[l-1]
     return arg
+
+#recuperer tab sans le dernier arg
 
 
 def recup_tab(tab):
