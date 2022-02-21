@@ -3,6 +3,8 @@
 
 import sys
 
+#tableau des differences
+
 
 def tab_min(tab):
     res = []
@@ -13,6 +15,8 @@ def tab_min(tab):
             else:
                 res.append(int(n)-int(m))
     return res
+
+#chercher le min des differences
 
 
 def find_min(tab):
@@ -31,6 +35,8 @@ def find_min(tab):
             a = n
     return a
 
+#arg doit etre int
+
 
 def is_int(tab):
     try:
@@ -41,6 +47,8 @@ def is_int(tab):
         return False
 
 
+#main
+#minimum 2 arguments entre par l'utilisateur
 if len(sys.argv) > 2:
     tab = sys.argv
     tab.pop(0)
