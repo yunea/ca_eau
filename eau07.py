@@ -44,6 +44,8 @@ def to_maj(letter):
         new_letter = l_maj[count_index]
     return new_letter
 
+#passage des majuscules 1 sur 2
+
 
 def majuscule(chaine):
 
@@ -68,7 +70,6 @@ def majuscule(chaine):
         else:
             new_chaine = new_chaine+l
         i = i+1
-
     i = 0
     for l in new_chaine:
         for j in tab:
@@ -80,6 +81,7 @@ def majuscule(chaine):
     return result
 
 
+#main
 arg = sys.argv[1]
 if nb_arg(sys.argv) == True:
     if is_string(arg) == True:
