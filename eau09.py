@@ -55,4 +55,4 @@ if len(sys.argv) == 3:
     else:
         print("Error integer needed")
 else:
-    print("Error arguments")
+    print("Error two arguments needed")
